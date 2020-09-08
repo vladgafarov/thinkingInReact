@@ -5,11 +5,15 @@ import PRODUCTS from "../samples";
 
 class TableProducts extends Component {
 	render() {
+		const { isStocked } = this.props;
 		const rows = [];
 		let lastCategory = null;
 
 		PRODUCTS.forEach((product) => {
 			const { category, price, name, stocked } = product;
+			if (isStocked === true && stocked === false) {
+				return;
+			}
 			if (category !== lastCategory) {
 				rows.push(
 					<CategoryProductRow categoryName={category} key={category} />

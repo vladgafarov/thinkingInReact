@@ -23,7 +23,7 @@ class App extends Component {
 					inStock={isStocked}
 					onCheckboxChange={this.handleCheckbox}
 				/>
-				<TableProducts />
+				<TableProducts isStocked={isStocked} />
 			</div>
 		);
 	}
