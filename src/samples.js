@@ -12,6 +12,12 @@ const PRODUCTS = [
 		name: "Baseball"
 	},
 	{
+		category: "Sporting Goods",
+		price: "$29.99",
+		stocked: false,
+		name: "Basketball"
+	},
+	{
 		category: "Electronics",
 		price: "$99.99",
 		stocked: true,
@@ -28,12 +34,6 @@ const PRODUCTS = [
 		price: "$199.99",
 		stocked: true,
 		name: "Nexus 7"
-	},
-	{
-		category: "Sporting Goods",
-		price: "$29.99",
-		stocked: false,
-		name: "Basketball"
 	}
 ];
 
