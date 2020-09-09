@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 class SearchBar extends Component {
+	handleInput = (e) => {
+		this.props.onInputChange(e.target.value);
+	};
+
 	handleCheckbox = (e) => {
 		this.props.onCheckboxChange(e.target.checked);
 	};
@@ -9,7 +13,12 @@ class SearchBar extends Component {
 		const { inStock } = this.props;
 		return (
 			<div>
-				<input type="text" placeholder="Search..." /> <br />
+				<input
+					type="text"
+					placeholder="Search..."
+					onChange={this.handleInput}
+				/>
+				<br />
 				<input
 					type="checkbox"
 					checked={inStock}

@@ -5,7 +5,14 @@ import TableProducts from "./components/TableProducts";
 
 class App extends Component {
 	state = {
+		filteredText: "",
 		isStocked: false
+	};
+
+	handleInput = (filteredText) => {
+		this.setState({
+			filteredText
+		});
 	};
 
 	handleCheckbox = (isStocked) => {
@@ -15,15 +22,16 @@ class App extends Component {
 	};
 
 	render() {
-		const { isStocked } = this.state;
+		const { filteredText, isStocked } = this.state;
 
 		return (
 			<div className="App">
 				<SearchBar
+					onInputChange={this.handleInput}
 					inStock={isStocked}
 					onCheckboxChange={this.handleCheckbox}
 				/>
-				<TableProducts isStocked={isStocked} />
+				<TableProducts filteredText={filteredText} isStocked={isStocked} />
 			</div>
 		);
 	}

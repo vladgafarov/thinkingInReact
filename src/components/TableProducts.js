@@ -5,12 +5,16 @@ import PRODUCTS from "../samples";
 
 class TableProducts extends Component {
 	render() {
-		const { isStocked } = this.props;
+		const { filteredText, isStocked } = this.props;
 		const rows = [];
 		let lastCategory = null;
 
 		PRODUCTS.forEach((product) => {
 			const { category, price, name, stocked } = product;
+			if (name.toLowerCase().indexOf(filteredText.toLowerCase()) === -1) {
+				return;
+			}
+
 			if (isStocked === true && stocked === false) {
 				return;
 			}
